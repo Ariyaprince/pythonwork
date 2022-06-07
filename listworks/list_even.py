@@ -42,12 +42,12 @@
 
 
 
-numbers=[-1,2,0,3,4,5,-2,0,3,4,-5,0,7,0]
-sum=0
-for num in numbers:
-    sum=sum+num
-    num+=1
-print(sum)
+# numbers=[-1,2,0,3,4,5,-2,0,3,4,-5,0,7,0]
+# sum=0
+# for num in numbers:
+#     sum=sum+num
+#     num+=1
+# print(sum)
 
 
 
