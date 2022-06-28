@@ -20,8 +20,7 @@ class Department:
         else:
             print("no access")
 
-        self.deprt_name=kwargs.get("deprt_name")
-        self.employee=kwargs.get("employee")
+
     def __str__(self):
         return self.deprt_name
 
