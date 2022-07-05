@@ -1,0 +1,2 @@
+a52,samsung,34000,4g,oled
+note11,redmi,17000,5g,led
