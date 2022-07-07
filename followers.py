@@ -1,8 +1,23 @@
-[
-    {"id": 1, "username": "akhil", "email": "akhil@gmail.com", "password": "Password@123","followers":[2,3]},
-    {"id": 2, "username": "nikil", "email": "nikil@gmail.com", "password": "Password@123","followers":[1,3,4,6]},
-    {"id": 3, "username": "anu", "email": "akhil@gmail.com", "password": "Password@123","followers":[2,1,4]},
-    {"id": 4, "username": "vinu", "email": "vinu@gmail.com", "password": "Password@123","followers":[2,3,6]},
-    {"id": 5, "username": "jhon", "email": "dfg@gmail.com", "password": "Password@123","followers":[2,3,1,6]},
-    {"id": 6, "username": "richard", "email": "ghj@gmail.com", "password": "Password@123","followers":[2,3,5]}
-]
+import json
+import random
+
+try:
+    with open("followers.json",encoding="utf-8") as f:
+        data=json.load(f)
+        print(data)
+
+    all_users=[user["id"] for user in data]
+    print(all_users)
+    my_followings=[user["followers"] for user in data if user["username"]=="akhil"][0]
+    print(my_followings)
+    my_id=[user["id"] for user in data if user["username"]=="akhil"].pop()
+    print(my_id)
+    to_follow=set(all_users)-set(my_followings)
+    to_follow.remove(my_id)
+    print(to_follow)
+
+    suggestions=random.sample([*to_follow],2)
+    print(suggestions)
+
+except Exception as e:
+    print(e.__class__)
